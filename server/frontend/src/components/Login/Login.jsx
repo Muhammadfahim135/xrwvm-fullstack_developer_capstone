@@ -28,7 +28,7 @@ const Login = ({ onClose }) => {
     const json = await res.json();
     if (json.status != null && json.status === "Authenticated") {
         sessionStorage.setItem('username', json.userName);
-        setOpen(false);        
+        window.location.href = "/dealers";
     }
     else {
       alert("The user could not be authenticated.")
@@ -36,8 +36,9 @@ const Login = ({ onClose }) => {
 };
 
   if (!open) {
-    window.location.href = "/";
+    window.location.href = "/dealers";
   };
+
   
 
   return (
